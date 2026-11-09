@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0c1210;
+  color: #dce8e2;
+}
+
+@keyframes temblor {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(var(--tremor-amp, 1px), calc(var(--tremor-amp, 1px) * -1)); }
+  50% { transform: translate(calc(var(--tremor-amp, 1px) * -1), var(--tremor-amp, 1px)); }
+  75% { transform: translate(var(--tremor-amp, 1px), var(--tremor-amp, 1px)); }
+  100% { transform: translate(0, 0); }
+}
+
+.celda-miedo {
+  animation: temblor var(--tremor-dur, 1s) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celda-miedo {
+    animation: none;
+    box-shadow: inset 0 0 0 2px #f87171;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid #3ddc97;
+  outline-offset: 2px;
+}
