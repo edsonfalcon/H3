@@ -1,11 +1,10 @@
 {
-  "teamCode": "TEAM-000",
-  "teamName": "Nombre de la cuadrilla",
+  "teamCode": "TEAM-059",
+  "teamName": "Cuadrilla H3",
   "deployUrl": "https://",
-  "storageProvider": "SUPABASE | CLOUDINARY",
+  "storageProvider": "SUPABASE",
   "integrantes": [
-    { "nombre": "Nombre Apellido", "codigo": "CODIGO UTEC" },
-    { "nombre": "Nombre Apellido", "codigo": "CODIGO UTEC" },
-    { "nombre": "Nombre Apellido", "codigo": "CODIGO UTEC" }
+    { "nombre": "Edson Yener Falcon Jimenez", "codigo": "202510492" },
+    { "nombre": "Omar Alonso Guzmán Harvey", "codigo": "202510519" }
   ]
 }
