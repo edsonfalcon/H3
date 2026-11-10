@@ -1,7 +1,7 @@
 {
   "teamCode": "TEAM-059",
   "teamName": "UtecH23",
-  "deployUrl": "https://",
+  "deployUrl": "https://utech23-h3.vercel.app",
   "storageProvider": "SUPABASE",
   "integrantes": [
     { "nombre": "Edson Yener Falcon Jimenez", "codigo": "202510492" },

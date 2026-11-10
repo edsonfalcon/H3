@@ -925,8 +925,8 @@ Supabase o Cloudinary que no sean públicas).
 
 ### URL de producción
 
-Despliegue en Vercel desde la rama `main` del repositorio `edsonfalcon/H3`. La URL exacta queda
-registrada en `hackathon.json` (`deployUrl`) una vez confirmado el despliegue.
+**https://utech23-h3.vercel.app** — despliegue en Vercel desde el último commit de `main` del repositorio
+`edsonfalcon/H3` (también registrado en `hackathon.json`).
 
 ### Cómo ejecutar el proyecto
 
