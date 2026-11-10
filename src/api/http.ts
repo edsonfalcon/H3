@@ -9,13 +9,22 @@ export class ApiError extends Error {
   code: string
   details: unknown
   retryAfter: number | null
+  etag: string | null
 
-  constructor(status: number, code: string, message: string, details: unknown = null, retryAfter: number | null = null) {
+  constructor(
+    status: number,
+    code: string,
+    message: string,
+    details: unknown = null,
+    retryAfter: number | null = null,
+    etag: string | null = null,
+  ) {
     super(message)
     this.status = status
     this.code = code
     this.details = details
     this.retryAfter = retryAfter
+    this.etag = etag
   }
 }
 
@@ -81,6 +90,7 @@ async function parseError(res: Response): Promise<ApiError> {
     parsed.data.message,
     parsed.data.details,
     Number.isNaN(retryAfter) ? null : retryAfter,
+    res.headers.get('ETag'),
   )
 }
 

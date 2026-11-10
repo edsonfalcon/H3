@@ -56,13 +56,13 @@ export function patchRefiner(
   id: number,
   etag: string,
   patch: { title?: string; extension?: string; bio?: string; departmentId?: number; badgeMediaId?: number | null },
-): Promise<Refiner> {
-  return request(`/refiners/${id}`, RefinerSchema, {
+): Promise<{ refiner: Refiner; etag: string | null }> {
+  return requestWithMeta(`/refiners/${id}`, RefinerSchema, {
     method: 'PATCH',
     body: patch,
     headers: { 'If-Match': etag },
     retries: 0,
-  })
+  }).then(({ data, meta }) => ({ refiner: data, etag: meta.etag }))
 }
 
 export function requestMediaTicket(input: {
