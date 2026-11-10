@@ -261,6 +261,19 @@ export default function RefinePage() {
 
   useEffect(() => {
     return subscribe((ev) => {
+      if (ev.event === 'stream.reset') {
+        store?.cancelarTodo()
+        setVersion((v) => v + 1)
+        setSeleccion(null)
+        setMensaje({ tono: 'aviso', texto: 'El flujo de eventos se reinició: recargamos el archivo por si algo cambió.' })
+        fetchFile(fileId)
+          .then((file) => {
+            setArchivo(file)
+            setCompletado(file.status === 'COMPLETE')
+          })
+          .catch(() => {})
+        return
+      }
       if (ev.event === 'refinement.created') {
         const data = ev.data as {
           fileId?: number
